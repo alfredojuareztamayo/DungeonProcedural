@@ -7,7 +7,7 @@ public class DungeonGenerators : MonoBehaviour
     // Start is called before the first frame update
     public Vector2 size;    // Tamaño de la cuadrícula del laberinto
     public int startPosition = 0; // Posición inicial en la cuadrícula
-    public GameObject room; // Prefab de la habitación para instanciar
+    public GameObject[] room; // Prefab de la habitación para instanciar
     public GameObject roomFake; // Prefab de la habitación para instanciar
     public Vector2 offset; //la distancia entre cada cuarto
 
@@ -27,10 +27,12 @@ public class DungeonGenerators : MonoBehaviour
             for (int j = 0; j < size.y; j++)
             {
                 Cell currentCell = board[Mathf.FloorToInt(i + j * size.x)];
+                GameObject roomRandom = room[Random.Range(0, 5)];
                 // Si la celda ha sido visitada, instancia una habitación en la posición correspondiente
                 if (currentCell.visited)
                 {
-                    var newRoom = Instantiate(room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviours>();
+                   
+                    var newRoom = Instantiate(roomRandom, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviours>();
                     newRoom.updateRooms(board[Mathf.FloorToInt(i + j * size.x)].state);
 
                     newRoom.name += " " + i + "-" + j;
