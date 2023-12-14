@@ -19,10 +19,14 @@ public class EnemyManager : MonoBehaviour
     void setTarget()
     {
         float dist = Vector3.Distance(player.transform.position, transform.position);
-        Debug.Log(dist);
-        if(dist < 5  )
+       // Debug.Log(dist);
+        if(dist < 7)
         {
             enemieStats.setTarget(player.transform);
+        }
+        else
+        {
+            enemieStats.setTarget(null);
         }
     }
 }

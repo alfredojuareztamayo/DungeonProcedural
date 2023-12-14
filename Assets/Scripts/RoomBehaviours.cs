@@ -8,6 +8,7 @@ public class RoomBehaviours : MonoBehaviour
     public GameObject[] walls; //up,down,right,left
     public GameObject[] doors; //up,down,right,left
     public GameObject chest;
+    public GameObject enemies;
     // Start is called before the first frame update
 
     private void Start()
@@ -17,6 +18,15 @@ public class RoomBehaviours : MonoBehaviour
         {
             Instantiate(chest,new Vector3(transform.position.x + 3.5f, transform.position.y+ 0.5f , transform.position.z), Quaternion.identity);
         }
+        if(rand == 2)
+        {
+            int randEnemies = Random.Range(1, 4);
+            for (int i = 0; i < randEnemies; i++)
+            {
+                Instantiate(enemies, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+            }
+        }
+        
     }
     //si recibe como verdadero en el estado de up,down,right,left significa que esta puerta esta abierta y por ende se va a activar el gameobject
     //y el de la pared se va a apagar setActive(state) :)

@@ -7,6 +7,8 @@ TagManager:
   - Room
   - weapon
   - Enemy
+  - punch
+  - Generator
   layers:
   - Default
   - TransparentFX

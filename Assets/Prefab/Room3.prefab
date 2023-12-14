@@ -516,6 +516,7 @@ MonoBehaviour:
   - {fileID: 8968345462485690965}
   - {fileID: 9189809441603560979}
   chest: {fileID: 1369177264398358888, guid: 92c5c04946899d14c9f66a8b9819ee07, type: 3}
+  enemies: {fileID: 7889718976488541249, guid: d7ba0553b99e7e6418d371af33b26df1, type: 3}
 --- !u!1 &9142817505293774607
 GameObject:
   m_ObjectHideFlags: 0
